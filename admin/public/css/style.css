@@ -78,3 +78,15 @@ padding: 1% 1% 1% 1% ;
 .tab-margin{
 margin: 0px  !important;
 }
+
+.loading-icon{
+	width: 60px;
+	height: auto;
+
+img.table-img {
+    height: 60px;
+}
+.form-control:focus {
+  border-color: #FF0000;
+  box-shadow: none;
+}
