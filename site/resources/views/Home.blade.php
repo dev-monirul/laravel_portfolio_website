@@ -6,4 +6,6 @@
 
 @include('component.HomeService')
 
+@include('component.HomeCourse')
+
 @endsection
