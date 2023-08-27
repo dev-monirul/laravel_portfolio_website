@@ -8,14 +8,14 @@ use App\Models\ServicesModel;
 class ServiceController extends Controller
 {
         function ServiceIndex(){
-           return view('Layout.Services'); 
+           return view('Layout.Services');
         }
 
 
         function getServiceData(){
-    $result=json_encode(ServicesModel::all());
-    return $result;
-}
+            $result=json_encode(ServicesModel::orderBy('id','desc')->get());
+            return $result;
+        }
 
 function getServiceDetails(Request $req){
   $id= $req->input('id');
@@ -29,7 +29,7 @@ function ServiceDelete(Request $req){
      $id= $req->input('id');
      $result= ServicesModel::where('id','=',$id)->delete();
 
-     if($result==true){      
+     if($result==true){
        return 1;
      }
      else{
@@ -44,7 +44,7 @@ function ServiceUpdate(Request $req){
      $img= $req->input('img');
      $result= ServicesModel::where('id','=',$id)->update(['service_name'=>$name,'service_des'=>$des,'service_img'=>$img]);
 
-     if($result==true){      
+     if($result==true){
        return 1;
      }
      else{
@@ -59,7 +59,7 @@ function ServiceAdd(Request $req){
      $img= $req->input('img');
      $result= ServicesModel::insert(['service_name'=>$name,'service_des'=>$des,'service_img'=>$img]);
 
-     if($result==true){      
+     if($result==true){
        return 1;
      }
      else{

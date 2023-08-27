@@ -15,13 +15,13 @@
     </tr>
   </thead>
   <tbody>
-			@foreach($VisitorData as $VisitorData)	
+			@foreach($VisitorData as $VisitorData)
     		<tr>
     			<td>{{$VisitorData->id}}</td>
 				<td>{{$VisitorData->ip_address}}</td>
 				<td>{{$VisitorData->visit_time}}</td>
             </tr>
-		    @endforeach		
+		    @endforeach
 
   </tbody>
 </table>
@@ -35,25 +35,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @section('script')
 <script type="text/javascript">
 
 
 // Visitor Page Table
 $(document).ready(function() {
-    $('#VisitorDt').DataTable();
+    $('#VisitorDt').DataTable({"order":false});
     $('.dataTables_length').addClass('bs-select');
 });
 
