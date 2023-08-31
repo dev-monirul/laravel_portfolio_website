@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\VisitorModel;
 use App\Models\ServicesModel;
 use App\Models\CourseModel;
+use App\Models\ProjectsModel;
 
 class HomeController extends Controller
 {
@@ -19,11 +20,13 @@ class HomeController extends Controller
 
         $ServicesData= json_decode(ServicesModel::all());
         $CoursesData= json_decode(CourseModel::orderBy('id','desc')->limit(6)->get());
+        $ProjectData=json_decode(ProjectsModel::orderBy('id','desc')->limit(10)->get());
 
 
         return view('Home',[
             'ServicesData'=>$ServicesData,
-            'CoursesData'=>$CoursesData
+            'CoursesData'=>$CoursesData,
+            'ProjectData'=>$ProjectData,
         ]);
     }
 }
