@@ -10,4 +10,6 @@
 
 @include('component.HomeProjects')
 
+@include('component.HomeContact')
+
 @endsection
