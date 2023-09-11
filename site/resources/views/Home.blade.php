@@ -12,4 +12,6 @@
 
 @include('component.HomeContact')
 
+@include('component.HomeReview')
+
 @endsection
